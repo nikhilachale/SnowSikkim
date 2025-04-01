@@ -45,7 +45,8 @@ const LogoCarousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full relative">
+    <div className="w-full relative mt-2">
+      <h1 className='px-30 text-4xl font-bold  font-serif'> Popular Places To Visit in Sikkim</h1>
       <div className="relative w-full bg-white py-4 px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div ref={carouselRef} className="flex overflow-x-auto scroll-smooth hide-scrollbar">
           {logoData.map((slide, index) => (

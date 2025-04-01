@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import Carousel from "@/components/Carousel";
 import { AccordionDemo } from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Learn from "@/components/Learn";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      <Carousel/>
       {/* <Card/> */}
       <Package/>
 
