@@ -33,7 +33,7 @@ export default function Learn() {
   if (!tourData) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="pt-20">
     <div className="grid grid-cols-10 h-fit px-20">
       {/* Tour Details */}
       <div key={tourData.id} className="col-span-7 p-10 bg-white">
