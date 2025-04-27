@@ -57,16 +57,23 @@ import {
     ]
   
     return (
-      <div className="bg-white p-10  mt-7 flex flex-col items-center justify-center">
-        <h2 className=" text-3xl px-4 text-black font-semibold">Sikkim Travel FAQs</h2>
-        <Accordion type="single" collapsible className="w-full max-w-4xl">
-          {faqData.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index + 1}`}>
-              <AccordionTrigger className="text-lg text-black font-medium">{item.question}</AccordionTrigger>
-              <AccordionContent className="text-base text-black">{item.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
+      <div className="bg-white px-4 md:px-10 py-6 md:py-10 mt-5 md:mt-7 flex flex-col items-center justify-center">
+  <h2 className="text-2xl md:text-3xl px-2 md:px-4 text-black font-semibold text-center">
+    Sikkim Travel FAQs
+  </h2>
+
+  <Accordion type="single" collapsible className="w-full max-w-4xl mt-4 md:mt-6">
+    {faqData.map((item, index) => (
+      <AccordionItem key={index} value={`item-${index + 1}`}>
+        <AccordionTrigger className="text-base md:text-lg text-black font-medium">
+          {item.question}
+        </AccordionTrigger>
+        <AccordionContent className="text-sm md:text-base text-black">
+          {item.answer}
+        </AccordionContent>
+      </AccordionItem>
+    ))}
+  </Accordion>
+</div>
     );
   }

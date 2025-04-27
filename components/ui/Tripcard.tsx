@@ -26,37 +26,56 @@ export default function Tripcard() {
     router.push(`/place/${id}`);
   };
   return (
-    <div className="flex flex-col items-center gap-6 p-6">
-      {tripDetails.map((trip) => (
-        <div key={trip.id} className="w-full flex flex-row bg-white border p-4 rounded-lg shadow-md overflow-hidden">
-          {/* Left Side - Image */}
-          <div className="w-1/3">
-            <Image src={trip.image} alt={trip.title} width={300} height={200} className="w-full h-full rounded-sm object-cover" />
+    <div className="flex flex-col items-center gap-6 p-4 md:p-6">
+    {tripDetails.map((trip) => (
+      <div
+        key={trip.id}
+        className="w-full flex flex-row bg-white border p-3 md:p-4 rounded-lg shadow-md overflow-hidden"
+      >
+        {/* Left Side - Image */}
+        <div className="w-1/3">
+          <Image
+            src={trip.image}
+            alt={trip.title}
+            width={300}
+            height={200}
+            className="w-full h-24 md:h-full rounded-sm object-cover"
+          />
+        </div>
+  
+        {/* Right Side - Trip Details */}
+        <div className="w-2/3 px-3 md:px-4 flex flex-col justify-between">
+          <div className="flex-1">
+            <p className="text-[10px] md:text-xs text-cyan-500 font-medium">
+              {trip.duration}
+            </p>
+            <h2 className="text-base md:text-xl text-black font-semibold py-1 md:py-2">
+              {trip.title}
+            </h2>
+            <p className="text-[10px] md:text-xs text-black">Starting @</p>
+            <h3 className="text-sm md:text-lg text-black font-semibold">
+              {trip.price}
+            </h3>
+            <p className="text-xs md:text-sm text-black">{trip.location}</p>
           </div>
-
-          {/* Right Side - Trip Details */}
-          <div className="w-2/3 p-4 flex flex-col justify-between">
-            <div>
-              <p className="text-cyan-500 text-xs font-medium">{trip.duration}</p>
-              <h2 className="text-xl text-black font-semibold py-2">{trip.title}</h2>
-              <p className="text-black text-xs">Starting @</p>
-              <h3 className="text-lg text-black font-semibold">{trip.price}</h3>
-              <p className="text-black text-sm">{trip.location}</p>
-            </div>
-
-            {/* Buttons */}
-            <div className="flex flex-row items-center cursor-pointer gap-4 mt-4">
-           <a href="#">   <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+  
+          {/* Buttons */}
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 mt-auto pt-3">
+            <a href="#" className="w-full md:w-auto">
+              <button className="w-full md:w-auto bg-red-500 text-white text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-lg hover:bg-red-600">
                 Send Enquiry
               </button>
-              </a>
-              <button onClick={() => handleClick(trip.id)} className="bg-white   cursor-pointer border text-black px-4 py-2 rounded-lg hover:bg-red-400 hover:text-white">
-                View Details
-              </button>
-            </div>
+            </a>
+            <button
+              onClick={() => handleClick(trip.id)}
+              className="w-full md:w-auto bg-white border text-black text-xs md:text-sm px-3 md:px-4 py-1.5 md:py-2 rounded-lg hover:bg-red-400 hover:text-white"
+            >
+              View Details
+            </button>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
   );
 }

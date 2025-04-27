@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import Carousel from "@/components/Carousel";
 import { AccordionDemo } from "@/components/Faq";
 import Footer from "@/components/Footer";
-import Learn from "@/components/Learn";
+
 import LogoCarousel from "@/components/LogoCarousel";
 import Navbar from "@/components/Navbar";
 import Package from "@/components/Package";
@@ -23,7 +23,7 @@ export default function Home() {
       <Testimonial/>
       <WhyUs/>
       <AccordionDemo/>
-      <Learn/>
+
 
       <Footer/>
     </div>
